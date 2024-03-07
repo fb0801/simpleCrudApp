@@ -1,0 +1,13 @@
+{
+  "name": "simplecrudapp",
+  "version": "1.0.0",
+  "description": "crud app built using Node, Express and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
