@@ -45,6 +45,22 @@ app.post('/api/products', async (req, res) => {
     }
 })
 
+//update product
+app.put('/api/product/:id', async (req,res) => {
+    try{
+        const {id} = req.params
+        const product = await Product.findByIdAndUpdate(id, req.body)
+        if (!product){
+            return res.status(404).json({message: "product not found"})
+        }
+            const updatedProduct = await Product.findById(id)
+            res.status(200).json(updatedProduct)
+    }catch (error){
+        res.status(500).json({message: error.message})
+
+    }
+})
+
 
 mongoose.connect("mongodb+srv://$:$@backenddb.ff3rrfz.mongodb.net/nodeapi?retryWrites=true&w=majority&appName=BackendDB")
 .then(() =>
