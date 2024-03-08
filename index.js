@@ -4,16 +4,33 @@ const mongoose = require('mongoose');
 const dotenv = require("dotenv")
 dotenv.config()
 
+const Product = require('./models/product.model.js')
+
 app.use(express.json())
 
 
 
 app.get("/", (req, res) => {
-    res.send("hello ")
+    res.send("hello from API ")
 })
 
-app.post('/api/products', (req, res) => {
-    res.send("data received")
+app.get("/api/products", async(req,res) => {
+
+    try{
+
+    }catch(error){
+        res.status(500).json({message:error.message})
+    }
+})
+
+app.post('/api/products', async (req, res) => {
+    try {
+        const product = await Product.create(res.body)
+        res.status(200).json(product)
+        
+    }catch(error){
+        res.status(500).json({message: error.message})
+    }
 })
 
 
