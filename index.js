@@ -4,10 +4,16 @@ const mongoose = require('mongoose');
 const dotenv = require("dotenv")
 dotenv.config()
 
+app.use(express.json())
+
 
 
 app.get("/", (req, res) => {
     res.send("hello ")
+})
+
+app.post('/api/products', (req, res) => {
+    res.send("data received")
 })
 
 
