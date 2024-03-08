@@ -61,6 +61,22 @@ app.put('/api/product/:id', async (req,res) => {
     }
 })
 
+//delete
+app.delete('/api/product/:id', async (res, req) => {
+    try{
+        const {id} = req.params
+        const product = await Product.findByIdAndDelete(id)
+
+        if (!product){
+            return res.status(404).json({message: "product not found"})
+        }
+        res.status(404).json({message: 'product removed'})
+
+    }catch (error){
+        res.status(500).json({message: error.message})
+    }
+})
+
 
 mongoose.connect("mongodb+srv://$:$@backenddb.ff3rrfz.mongodb.net/nodeapi?retryWrites=true&w=majority&appName=BackendDB")
 .then(() =>
