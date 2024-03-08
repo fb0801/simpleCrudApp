@@ -4,6 +4,10 @@ crud app built using Node, Express and MongoDB
 
 ## Resources used:
 
+https://www.youtube.com/watch?v=_7UQPve99r4
+
+original repo -> https://github.com/haris-bit/simple-crud-app-backend
+
 https://www.toptal.com/developers/gitignore/
 
 https://www.npmjs.com/package/express

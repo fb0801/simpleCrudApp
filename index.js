@@ -11,12 +11,12 @@ app.get("/", (req, res) => {
 })
 
 
-mongoose.connect("mongodb+srv://$:@backenddb.ff3rrfz.mongodb.net/nodeapi?retryWrites=true&w=majority&appName=BackendDB")
+mongoose.connect("mongodb+srv://$:$@backenddb.ff3rrfz.mongodb.net/nodeapi?retryWrites=true&w=majority&appName=BackendDB")
 .then(() =>
 {
     console.log("connected")
     app.listen(3000, () => {
-        console.log("running")
+        console.log("running on 3000")
     })
 
 })
